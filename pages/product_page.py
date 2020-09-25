@@ -8,8 +8,9 @@ class ProductPage(BasePage):
         button.click()
 
     def should_be_msg_added_to_basket(self):
-        assert self.is_element_present(*ProductPageLocators.ADDED_MESSAGE), "'Added to basket' notification" \
-                                                                            " is not presented"
+        added_name = self.browser.find_element(*ProductPageLocators.ADDED_ITEM_MESSAGE).text
+        item_name = self.browser.find_element(*ProductPageLocators.SELECTED_ITEM).text
+        assert added_name == item_name, "Name of item added to basket is wrong!"
 
     def should_be_total_price_of_basket(self):
         item_price = self.browser.find_element(*ProductPageLocators.ITEM_PRICE).text
