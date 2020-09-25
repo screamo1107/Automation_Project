@@ -1,7 +1,7 @@
-base_page.py - Store all methods that apply to whole project;
+**base_page.py** - Store all methods that apply to all Page Objects;
 
-****_page.py - Store methods for specific page + methods inherited from base_page;
+**%some%_page.py** - Store methods for specific Page Object + methods inherited from base_page;
 
-locators.py - Locators stored as const;
+**locators.py** - Locators stored as const;
 
-test_main_page.py - Executing the tests itself by PyTest using prefix "test_";
+**test_%some%_page.py** - Executing the tests itself by PyTest using prefix "test_";
