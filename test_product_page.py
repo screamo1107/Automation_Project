@@ -37,8 +37,8 @@ class TestUserAddToBasketFromProductPage:
 
 
 @pytest.mark.need_review
-@pytest.mark.parametrize('offer', [str(x) for x in range(0, 10)])
-@pytest.mark.xfail(reason="Known issue on offer7")
+@pytest.mark.parametrize('offer',
+                         [pytest.param("7", marks=pytest.mark.xfail) if x == 7 else str(x) for x in range(0, 10)])
 def test_guest_can_add_product_to_basket(browser, offer):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{offer}"
     page = ProductPage(browser, link)
