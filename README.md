@@ -6,10 +6,17 @@ pip install -r requirements.txt
 **Run**:
 
 for **Google Chrome**:
-pytest -v -s -m need_review --tb=line --browser_name=chrome test_%page%.py
+pytest -v -s -m need_review --tb=line test_%page%.py
 
 for **Mozilla Firefox**:
-pytest -v -s -m need_review --tb=line --browser_name=firefox test_%page%.py
+pytest -v -s -m need_review --tb=line test_%page%.py
+
+Parameters: 
+
+--browser_name = ['chrome', 'firefox']
+
+--language = ['en','ru']
+
 
 Example: pytest -v -s -m need_review --tb=line --browser_name=chrome test_product_page.py
 
