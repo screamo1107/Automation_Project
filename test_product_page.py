@@ -59,7 +59,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.should_not_be_success_message()
 
 
-@pytest.mark.need_review
+@pytest.mark.regression
 def test_guest_should_see_login_link_on_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
